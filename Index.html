@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="webAdminApp">
+<head>
+    <title>Angular Navigation....</title>
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="app/Libs/angular.min.js"></script>
+    <script src="app/Libs/angular-route.min.js"></script>
+    
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css" />
+    <script src="app/app.js"></script>
+    <script src="app/Services/AccountService.js"></script>
+    <script src="app/Controllers/accountController.js"></script>
+
+</head>
+<body>
+    
+       <!-- Static navbar -->
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Web Administration Tool</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-left">
+                                <li> <a href="#/">Home</a></li>
+                           <li> <a href="#/About">About</a></li>
+                           <li> <a href="#/Contact">Contacts</a></li>
+                            <li><a href="#/Account">Account</a></li>
+                        <li><a href="#/clients">clients</a></li>
+            </ul>
+           <ul class="nav navbar-nav navbar-right">
+                     <li>
+                         <span id="anonymousUser" ng-hide="loginStatus">
+                            [Welcome Guest!][<a href="#/Login" id="loginlink">Login</a>/<a href="#/Register" id="registerlink">Register</a>]
+                        </span>
+                        <span id="loggedUser" ng-show="loginStatus">
+                            [Welcome <span id="userinfo">{{loggedUsername}}</span> !] [<a href="#/Logout" id="logoutlink">Logout</a>]
+                        </span>
+                  </li>
+          </ul>    
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+
+   
+
+    <section id="content" class="container">
+        
+        <div class="row">
+            <div class="col-md-8"> <div class="jumbotron" ng-view></div></div>
+            <div class="col-md-4">
+                 <div class="list-group">
+
+               <div id="afterloginlinks" ng-show="loginStatus">
+                          <a href="#/ResetPassword" class="list-group-item"  id="resetpassword">Reset Password</a>
+                          <br />
+                          <br />
+                          <a href="#/EditInfo" class="list-group-item" id="editinfo">Edit Info</a><br />
+                          <br />
+
+                      </div>
+
+            <a href="#" class="list-group-item">Link</a>
+            <a href="#" class="list-group-item">Link</a>
+            <a href="#" class="list-group-item">Link</a>
+          
+          </div>
+            </div>
+        </div>
+       
+    </section>
+
+    <section id="footer">
+        <footer class="modal-footer">
+            &copy; Marlabs-2015
+        </footer>
+    </section>
+    
+
+
+    <script type="text/ng-template" id="clients.html">
+        <h1>Clients Page</h1>
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+﻿<div>
+    <h2>User Info</h2>
+    <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-10">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>UserId</th>
+                    <th>UserName</th>
+                    <th>Password</th>
+                    <th>Email</th>
+                    <th>Mobile</th>
+                </tr>
+                <tr ng-repeat="user in users">
+                    <td>{{user.userid}}</td>
+                    <td>{{user.username}}</td>
+                    <td>{{user.password}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.mobile}}</td>
+                </tr>
+            </thead>
+        </table>
+    </div>
+        </div>
+</div>
